@@ -1,0 +1,49 @@
+<header>
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+      <h2 class="navbar-brand">Furniture</h2>
+      <button
+        class="navbar-toggler"
+        type="button"
+        aria-controls="navbar-menu"
+        aria-label="Toggle navigation"
+        (click)="toggleMenu()"
+        [attr.aria-expanded]="!menuHidden"
+      >
+        <span [class.one]="!menuHidden"></span>
+        <span [class.two]="!menuHidden"></span>
+        <span [class.three]="!menuHidden"></span>
+      </button>
+      <div id="navbar-menu" class="collapse navbar-collapse float-xs-none ml-auto" [ngbCollapse]="menuHidden">
+        <div class="navbar-nav">
+          <a class="nav-item nav-link" (click)="toHome()">
+            <i class="fas fa-home"></i>
+            <span translate>Home</span>
+          </a>
+          <a class="nav-item nav-link" (click)="toAbout()">
+            <i class="fas fa-question-circle"></i>
+            <span translate>About</span>
+          </a>
+          <a class="nav-item nav-link" (click)="toServices()">
+            <i class="fas fa-question-circle"></i>
+            <span translate>Services</span> </a
+          ><a class="nav-item nav-link" (click)="toTeam()">
+            <i class="fas fa-question-circle"></i>
+            <span translate>Team</span> </a
+          ><a class="nav-item nav-link" (click)="toPortiflio()">
+            <i class="fas fa-question-circle"></i>
+            <span translate>Portiflio</span>
+          </a>
+          <!-- <a class="nav-item nav-link" (click)="toTestimoials()">
+          <i class="fas fa-question-circle"></i>
+          <span translate>testimoials</span>
+        </a> -->
+          <!-- <a class="nav-item nav-link" (click)="toContact()">
+          <i class="fas fa-question-circle"></i>
+          <span translate>Contact</span>
+        </a> -->
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
