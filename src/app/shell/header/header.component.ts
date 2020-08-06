@@ -31,7 +31,10 @@ export class HeaderComponent implements OnInit {
   toPortiflio() {
     document.getElementById('portfolio').scrollIntoView({ behavior: 'smooth' });
   }
-  //   toTestimoials(){
-  //   document.getElementById("testimoials").scrollIntoView({behavior:"smooth"});
-  // }
+  toTestimonials() {
+    document.getElementById('testimonials').scrollIntoView({ behavior: 'smooth' });
+  }
+  toContact() {
+    document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+  }
 }
