@@ -1,5 +1,6 @@
 <!--start header-->
-<section id="header" class="header">
+<div class="section1" id="header"></div>
+<section class="header">
   <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
       <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -65,7 +66,8 @@
 </section>
 <!--end header-->
 <!--start about-->
-<section id="about" class="about mt-5">
+<div style="height: 60px !important;" class="section2" id="about"></div>
+<section class="about mt-5">
   <div class="container">
     <div class="heading text-center mb-5">
       <h2>about furniture</h2>
@@ -97,7 +99,8 @@
 </section>
 <!--end about-->
 <!--start services-->
-<section id="services" class="services mt-5">
+<div style="height: 60px !important;" class="section3" id="services"></div>
+<section class="services mt-5">
   <div class="container">
     <div class="heading text-center mb-5">
       <h2>our services</h2>
@@ -171,7 +174,8 @@
 </section>
 <!--end services-->
 <!--start team-->
-<section id="team" class="team mt-5">
+<div style="height: 60px !important;" class="section4" id="team"></div>
+<section class="team mt-5">
   <div class="container">
     <div class="heading text-center mb-5">
       <h2>our special team</h2>
@@ -277,7 +281,8 @@
 </section>
 <!--end back-->
 <!--start portfolio-->
-<section id="portfolio" class="portfolio mt-5">
+<div style="height: 60px !important;" class="section5" id="portfolio"></div>
+<section class="portfolio mt-5">
   <div class="container">
     <div class="heading text-center mb-5">
       <h2>our portfolio</h2>
@@ -285,111 +290,23 @@
     </div>
     <div class="btns text-center">
       <ul>
-        <li class="btn btn-danger active" data-filter="all">all</li>
-        <li class="btn btn-danger" data-filter=".offices">offices</li>
-        <li class="btn btn-danger" data-filter=".chairs">chairs</li>
-        <li class="btn btn-danger" data-filter=".rooms">rooms</li>
+        <li class="btn btn-danger active" (click)="getImages(0)">all</li>
+        <li class="btn btn-danger" (click)="getImages(2)">offices</li>
+        <li class="btn btn-danger" (click)="getImages(3)">chairs</li>
+        <li class="btn btn-danger" (click)="getImages(4)">rooms</li>
       </ul>
     </div>
     <div class="gallary mt-5">
       <div class="row">
-        <div class="col-lg-4 col-md-6 mix offices">
+        <div class="col-lg-4 col-md-6 mix offices" *ngFor="let item of curentImages">
           <div class="box">
             <div class="overlay">
               <div class="info">
-                <h4>good work</h4>
-                <span>furniture</span>
+                <h4>{{ item.title }}</h4>
+                <span>{{ item.subtitle }}</span>
               </div>
             </div>
-            <img src="../../assets/images/03.jpg" />
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6 mix rooms">
-          <div class="box">
-            <div class="overlay">
-              <div class="info">
-                <h4>good work</h4>
-                <span>furniture</span>
-              </div>
-            </div>
-            <img src="../../assets/images/04.jpg" />
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6 mix offices">
-          <div class="box">
-            <div class="overlay">
-              <div class="info">
-                <h4>good work</h4>
-                <span>furniture</span>
-              </div>
-            </div>
-            <img src="../../assets/images/05.jpg" />
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6 mix offices">
-          <div class="box">
-            <div class="overlay">
-              <div class="info">
-                <h4>good work</h4>
-                <span>furniture</span>
-              </div>
-            </div>
-            <img src="../../assets/images/06.jpg" />
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6 mix offices">
-          <div class="box">
-            <div class="overlay">
-              <div class="info">
-                <h4>good work</h4>
-                <span>furniture</span>
-              </div>
-            </div>
-            <img src="../../assets/images/07.jpg" />
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6 mix rooms">
-          <div class="box">
-            <div class="overlay">
-              <div class="info">
-                <h4>good work</h4>
-                <span>furniture</span>
-              </div>
-            </div>
-            <img src="../../assets/images/08.jpg" />
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6 mix offices">
-          <div class="box">
-            <div class="overlay">
-              <div class="info">
-                <h4>good work</h4>
-                <span>furniture</span>
-              </div>
-            </div>
-            <img src="../../assets/images/05.jpg" />
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6 mix rooms">
-          <div class="box">
-            <div class="overlay">
-              <div class="info">
-                <h4>good work</h4>
-                <span>furniture</span>
-              </div>
-            </div>
-            <img src="../../assets/images/02.jpg" />
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6 mix offices">
-          <div class="box">
-            <div class="overlay">
-              <div class="info">
-                <h4>good work</h4>
-                <span>furniture</span>
-              </div>
-            </div>
-            <img src="../../assets/images/01.jpg" />
+            <img [src]="item.url" />
           </div>
         </div>
       </div>
@@ -398,7 +315,8 @@
 </section>
 <!--end portfolio-->
 <!--start testimonials-->
-<section id="testimonials" class="testimonials mt-5">
+<div style="height: 60px !important;" class="section6" id="testimonials"></div>
+<section class="testimonials mt-5">
   <div class="overlay"></div>
   <div class="container">
     <div id="Indicators" class="carousel slide" data-ride="carousel">
@@ -449,9 +367,9 @@
   </div>
 </section>
 <!--end testimonials-->
-
 <!--start contact-->
-<section id="contact" class="contact mt-5">
+<div style="height: 60px !important;" class="section7" id="contact"></div>
+<section class="contact mt-5">
   <div class="container">
     <div class="heading text-center mb-5">
       <h2>Contact us</h2>
